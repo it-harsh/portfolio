@@ -45,8 +45,8 @@ export default function About() {
             About Me
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold">
-            Turning caffeine into{" "}
-            <span className="gradient-text">backend services</span>
+            Obsessed with latency,{" "}
+            <span className="gradient-text">allergic to downtime</span>
           </h3>
         </motion.div>
 

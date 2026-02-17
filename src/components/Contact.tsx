@@ -114,14 +114,19 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Contact form */}
+          {/* Contact form - sends via formsubmit.co (no signup needed) */}
           <motion.form
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-4 p-6 rounded-2xl border border-card-border bg-card-bg/50 backdrop-blur-sm"
-            onSubmit={(e) => e.preventDefault()}
+            action="https://formsubmit.co/it.harsh2197@gmail.com"
+            method="POST"
           >
+            {/* FormSubmit config - disable captcha, redirect back */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://portfolio-it-harsh.vercel.app/?submitted=true" />
+            <input type="hidden" name="_subject" value="New message from your portfolio!" />
             <div>
               <label htmlFor="name" className="text-sm text-muted block mb-2">
                 Name
@@ -129,6 +134,8 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
+                name="name"
+                required
                 placeholder="Your Name"
                 className="w-full px-4 py-3 rounded-xl bg-background border border-card-border text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent-light transition-colors"
               />
@@ -140,6 +147,8 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
+                name="email"
+                required
                 placeholder="you@example.com"
                 className="w-full px-4 py-3 rounded-xl bg-background border border-card-border text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent-light transition-colors"
               />
@@ -150,6 +159,8 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
+                required
                 rows={4}
                 placeholder="Tell me about your project..."
                 className="w-full px-4 py-3 rounded-xl bg-background border border-card-border text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent-light transition-colors resize-none"
