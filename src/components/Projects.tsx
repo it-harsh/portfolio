@@ -28,8 +28,8 @@ const projects = [
     description:
       "A ReactJS-powered expense-splitting application leveraging advanced state management techniques to divide expenses among friends seamlessly.",
     tags: ["React", "JavaScript", "State Management", "CSS"],
-    github: "https://github.com/it-harsh",
-    live: "",
+    github: "https://github.com/it-harsh/react",
+    live: "https://it-harsh.github.io/react",
     featured: false,
   },
   {
@@ -75,7 +75,7 @@ export default function Projects() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 * i }}
               whileHover={{ y: -8 }}
-              className={`group relative p-6 rounded-2xl border border-card-border bg-card-bg/50 backdrop-blur-sm glow-hover transition-all duration-500 ${
+              className={`group relative p-6 rounded-2xl border border-card-border bg-card-bg/50 backdrop-blur-sm glow-hover transition-all duration-500 flex flex-col ${
                 project.featured ? "md:row-span-1" : ""
               }`}
             >
@@ -107,7 +107,7 @@ export default function Projects() {
               </div>
 
               {/* Links */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto pt-2">
                 <a
                   href={project.github}
                   target="_blank"
