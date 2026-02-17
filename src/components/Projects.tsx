@@ -15,9 +15,9 @@ const projects = [
     featured: true,
   },
   {
-    title: "WatchMyShow",
+    title: "BookMyShow Clone",
     description:
-      "Spring Boot ticket-booking application featuring JWT-secured, role-based @PreAuthorize APIs, rate limiting, Scheduler-driven auto-release of unpaid seat holds, admin endpoints for theatres/shows/movies, and a mock payment workflow.",
+      "Full-stack ticket booking application featuring JWT-secured, role-based @PreAuthorize APIs, rate limiting, Scheduler-driven auto release of unpaid seat holds, admin endpoints for theatres/shows/movies, and a mock payment workflow.",
     tags: ["Spring Boot", "Java 17", "JWT", "REST API", "PostgreSQL"],
     github: "https://github.com/it-harsh",
     live: "https://bookmyshowfe.vercel.app/",
