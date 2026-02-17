@@ -6,6 +6,15 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    title: "InvoiceAI",
+    description:
+      "AI-powered invoice & expense management SaaS. Upload invoices (PDF/image) and AI auto-extracts vendor, amount, line items, and category. Features expense approval workflows, dashboard analytics with spend-by-category and monthly trends, CSV export, and multi-tenant org support.",
+    tags: ["Spring Boot", "Java 21", "Next.js", "TypeScript", "PostgreSQL", "Claude AI", "Cloudflare R2", "Tailwind CSS"],
+    github: "https://github.com/it-harsh/invoiceai-api",
+    live: "https://invoiceai-web.vercel.app",
+    featured: true,
+  },
+  {
     title: "BookMyShow Clone",
     description:
       "Full-stack ticket booking application featuring JWT-secured, role-based @PreAuthorize APIs, rate limiting, Scheduler-driven auto release of unpaid seat holds, admin endpoints for theatres/shows/movies, and a mock payment workflow.",
