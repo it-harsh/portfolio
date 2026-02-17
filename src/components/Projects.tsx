@@ -79,20 +79,20 @@ export default function Projects() {
                 project.featured ? "md:row-span-1" : ""
               }`}
             >
-              {/* Featured badge */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 px-2 py-1 text-[10px] font-mono uppercase tracking-wider bg-accent/20 text-accent-light rounded-full border border-accent/30">
-                  Featured
-                </div>
-              )}
-
-              {/* Arrow icon on hover */}
-              <motion.div
-                className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity"
-                initial={false}
-              >
-                <ArrowUpRight className="w-5 h-5 text-accent-light" />
-              </motion.div>
+              {/* Top-right corner: badge or hover arrow */}
+              <div className="absolute top-4 right-4">
+                {project.featured ? (
+                  <div className="px-2 py-1 text-[10px] font-mono uppercase tracking-wider bg-accent/20 text-accent-light rounded-full border border-accent/30 group-hover:opacity-0 transition-opacity">
+                    Featured
+                  </div>
+                ) : null}
+                <motion.div
+                  className={`opacity-0 group-hover:opacity-100 transition-opacity ${project.featured ? "absolute top-0 right-0" : ""}`}
+                  initial={false}
+                >
+                  <ArrowUpRight className="w-5 h-5 text-accent-light" />
+                </motion.div>
+              </div>
 
               <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent-light transition-colors">
                 {project.title}
