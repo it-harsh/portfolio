@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+
+    <!-- Accent gradient for text -->
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="50%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+
+    <!-- Orb gradients -->
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6d28d9;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#8b5cf6" stroke-width="0.3" opacity="0.08"/>
+    </pattern>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Tag pill background -->
+    <linearGradient id="tagBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e1e2e"/>
+      <stop offset="100%" style="stop-color:#1a1a2a"/>
+    </linearGradient>
+
+    <!-- Line gradient -->
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#8b5cf6;stop-opacity:0.6"/>
+      <stop offset="70%" style="stop-color:#06b6d4;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bg)"/>
+
+  <!-- Grid overlay -->
+  <rect width="1584" height="396" fill="url(#grid)"/>
+
+  <!-- Floating orbs -->
+  <ellipse cx="250" cy="120" rx="300" ry="250" fill="url(#orb1)"/>
+  <ellipse cx="1300" cy="300" rx="350" ry="280" fill="url(#orb2)"/>
+  <ellipse cx="800" cy="50" rx="200" ry="180" fill="url(#orb3)"/>
+
+  <!-- Decorative code brackets on left -->
+  <text x="80" y="180" font-family="monospace" font-size="120" fill="#8b5cf6" opacity="0.06" font-weight="bold">{</text>
+  <text x="1440" y="340" font-family="monospace" font-size="120" fill="#06b6d4" opacity="0.06" font-weight="bold">}</text>
+
+  <!-- Horizontal accent line -->
+  <line x1="100" y1="245" x2="1484" y2="245" stroke="url(#lineGrad)" stroke-width="1"/>
+
+  <!-- Name -->
+  <text x="792" y="155" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="64" font-weight="700" fill="url(#accent)" filter="url(#glow)">
+    Harsh Patel
+  </text>
+
+  <!-- Title -->
+  <text x="792" y="210" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" fill="#a1a1aa" letter-spacing="4">
+    JAVA BACKEND DEVELOPER
+  </text>
+
+  <!-- Skill tags row -->
+  <!-- Java 17 -->
+  <rect x="282" y="272" width="90" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="327" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">Java 17</text>
+
+  <!-- Spring Boot -->
+  <rect x="390" y="272" width="115" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="447" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">Spring Boot</text>
+
+  <!-- Quarkus -->
+  <rect x="523" y="272" width="95" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="570" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">Quarkus</text>
+
+  <!-- gRPC -->
+  <rect x="636" y="272" width="72" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="672" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">gRPC</text>
+
+  <!-- PostgreSQL -->
+  <rect x="726" y="272" width="115" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="783" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">PostgreSQL</text>
+
+  <!-- Docker -->
+  <rect x="859" y="272" width="85" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="901" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">Docker</text>
+
+  <!-- AWS -->
+  <rect x="962" y="272" width="80" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="1002" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">AWS ECS</text>
+
+  <!-- Keycloak -->
+  <rect x="1060" y="272" width="100" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="1110" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">Keycloak</text>
+
+  <!-- Microservices -->
+  <rect x="1178" y="272" width="125" height="34" rx="17" fill="#1e1e2e" stroke="#2e2e3e" stroke-width="1"/>
+  <text x="1240" y="294" text-anchor="middle" font-family="monospace" font-size="13" fill="#a1a1aa">Microservices</text>
+
+  <!-- Tagline at bottom -->
+  <text x="792" y="350" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#71717a" letter-spacing="1">
+    Building scalable, high-performance backend services
+  </text>
+
+  <!-- Small green dot + "Open to Work" -->
+  <circle cx="690" cy="375" r="4" fill="#34d399" opacity="0.9"/>
+  <text x="702" y="380" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" fill="#34d399" opacity="0.9">
+    Open to opportunities
+  </text>
+
+  <!-- Subtle border -->
+  <rect x="0" y="0" width="1584" height="396" fill="none" stroke="#1e1e2e" stroke-width="1"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1584" height="2" fill="url(#accent)" opacity="0.5"/>
+</svg>
