@@ -6,31 +6,31 @@ import { useRef } from "react";
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["Java 17", "JavaScript", "Python", "SQL"],
+    skills: ["Java 21", "JavaScript", "TypeScript", "Python", "SQL", "HTML/CSS"],
     color: "from-purple-500 to-violet-600",
     span: "col-span-2 md:col-span-1",
   },
   {
     title: "Backend Frameworks",
-    skills: ["Spring Boot", "Quarkus", "gRPC", "REST APIs", "Microservices"],
+    skills: ["Spring Boot", "Hibernate/JPA", "REST APIs", "Maven", "Microservices"],
     color: "from-cyan-500 to-blue-600",
     span: "col-span-2 md:col-span-1",
   },
   {
     title: "Databases & Messaging",
-    skills: ["PostgreSQL", "Redis", "Kafka", "Hibernate/JPA"],
+    skills: ["PostgreSQL", "MySQL", "Redis", "Kafka"],
     color: "from-emerald-500 to-teal-600",
     span: "col-span-2",
   },
   {
     title: "DevOps & Cloud",
-    skills: ["Docker", "AWS ECS", "CI/CD", "Linux", "Git"],
+    skills: ["Docker", "AWS", "CI/CD", "Linux", "Bash Scripting", "Git"],
     color: "from-orange-500 to-amber-600",
     span: "col-span-2 md:col-span-1",
   },
   {
-    title: "Security & Tools",
-    skills: ["Keycloak", "RBAC", "JWT", "OpenAPI", "SoapUI", "Claude Code"],
+    title: "Tools & Practices",
+    skills: ["IntelliJ", "Postman", "SoapUI", "Jira", "Agile", "Performance Optimization"],
     color: "from-rose-500 to-pink-600",
     span: "col-span-2 md:col-span-1",
   },

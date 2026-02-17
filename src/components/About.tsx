@@ -59,20 +59,21 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-muted leading-relaxed text-lg">
-              I&apos;m Harsh Patel — a Java Backend Developer based in India with
-              2+ years of hands-on experience building scalable, high-performance
-              backend services using the Spring ecosystem.
+              I&apos;m Harsh Patel — a Backend Java Developer with 2 years of
+              Spring/Spring Boot experience, ready to deliver scalable,
+              high-performance backend services.
             </p>
             <p className="text-muted leading-relaxed">
-              At TCS, I optimized legacy systems — eliminating database locking issues,
-              modernizing multithreaded processing logic, and cutting log storage by 90%.
-              Currently at GroveTech Solutions, I build secure APIs with Keycloak auth,
-              gRPC integrations, and RBAC across multiple business domains.
+              At TCS, I optimized legacy systems — eliminating database locking issues
+              to boost throughput by 84.6%, modernizing multithreaded file-processing
+              to improve performance by 93%, and cutting log storage by 90%. I also
+              researched and built a proof-of-concept centralized log-monitoring
+              solution using Elasticsearch, Kibana, and Filebeat.
             </p>
             <p className="text-muted leading-relaxed">
               I hold a B.E. in Information Technology from Gujarat Technological University
-              (8.73 CGPA). I&apos;m passionate about system design (HLD/LLD) and
-              continuously push myself to build more robust and elegant architectures.
+              (8.73 CGPA). I&apos;m eager to learn system-design principles (HLD/LLD)
+              to support and enhance robust software architecture.
             </p>
           </motion.div>
 

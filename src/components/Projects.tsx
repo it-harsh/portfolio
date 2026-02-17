@@ -15,13 +15,22 @@ const projects = [
     featured: true,
   },
   {
-    title: "BookMyShow Clone",
+    title: "WatchMyShow",
     description:
-      "Full-stack ticket booking application featuring JWT-secured, role-based @PreAuthorize APIs, rate limiting, Scheduler-driven auto release of unpaid seat holds, admin endpoints for theatres/shows/movies, and a mock payment workflow.",
+      "Spring Boot ticket-booking application featuring JWT-secured, role-based @PreAuthorize APIs, rate limiting, Scheduler-driven auto-release of unpaid seat holds, admin endpoints for theatres/shows/movies, and a mock payment workflow.",
     tags: ["Spring Boot", "Java 17", "JWT", "REST API", "PostgreSQL"],
     github: "https://github.com/it-harsh",
     live: "https://bookmyshowfe.vercel.app/",
     featured: true,
+  },
+  {
+    title: "Split Share",
+    description:
+      "A ReactJS-powered expense-splitting application leveraging advanced state management techniques to divide expenses among friends seamlessly.",
+    tags: ["React", "JavaScript", "State Management", "CSS"],
+    github: "https://github.com/it-harsh",
+    live: "",
+    featured: false,
   },
   {
     title: "Urban Feature Extraction — ISRO",
