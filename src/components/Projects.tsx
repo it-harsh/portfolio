@@ -39,6 +39,7 @@ const projects = [
     tags: ["Python", "scikit-learn", "Neural Networks", "Image Processing"],
     github: "https://github.com/it-harsh",
     live: "https://drive.google.com/file/d/1jj7pPl3QsI3c8hy8DifY5wZkZciGn4Wn/view?usp=sharing",
+    liveLabel: "Project Report",
     featured: true,
   },
 ];
@@ -125,7 +126,7 @@ export default function Projects() {
                     className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
                   >
                     <ExternalLink size={16} />
-                    Live Demo
+                    {project.liveLabel || "Live Demo"}
                   </a>
                 )}
               </div>
