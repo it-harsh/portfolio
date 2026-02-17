@@ -7,12 +7,22 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const experiences = [
   {
     type: "work",
+    role: "Software Developer",
+    company: "GroveTech Solutions",
+    period: "Oct 2025 - Present",
+    location: "Surat, India",
+    description:
+      "Implemented and maintained secure backend APIs with Keycloak auth, gRPC integrations, RBAC, and OpenAPI specs across onboarding, payments, templates, approvals, and transactions. Resolved critical system stability issues including gRPC failures, race conditions, webhook errors, and intermittent 500s through AWS, DB, and event-flow debugging. Delivered scalable features such as invite-member workflows, approval rules, exports, cron jobs, metadata-driven validation, and cascading deletes.",
+    tags: ["Spring Boot", "Keycloak", "gRPC", "AWS", "PostgreSQL"],
+  },
+  {
+    type: "work",
     role: "Assistant System Engineer",
     company: "Tata Consultancy Services Ltd",
     period: "Feb 2021 - Mar 2023",
     location: "Mumbai, India",
     description:
-      "USM: Optimized legacy code to reduce database locks from multithreaded access, improving throughput by 84.6%. Updated query conditions to check user consumption across clusters, reducing response time by 62.5%. Researched and built a PoC centralized log-monitoring solution using Elasticsearch, Kibana, and Filebeat. Updated 300+ SoapUI test suites for encrypted parameters. CDR: Upgraded multithreaded file-scanning and processing performance by up to 93%, eliminating I/O alarms. Optimized loggers to reduce storage by 90%. Designed a Java-based simulator for production-scale CDR file generation.",
+      "USM: Optimized legacy code to reduce database locks from multithreaded access, improving throughput by 84.6%. Updated query conditions for cross-cluster user consumption checks, reducing response time by 62.5%. Built a PoC centralized log-monitoring solution using Elasticsearch, Kibana, and Filebeat. Updated 300+ SoapUI test suites for encrypted parameters. CDR: Upgraded multithreaded file-scanning performance by up to 93%, eliminating I/O alarms. Optimized loggers to reduce storage by 90%. Designed a Java-based CDR load simulator for production-scale testing.",
     tags: ["Java", "Multithreading", "SoapUI", "ELK Stack", "Performance Optimization"],
   },
   {
