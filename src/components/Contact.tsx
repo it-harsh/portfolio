@@ -125,7 +125,7 @@ export default function Contact() {
           >
             {/* FormSubmit config - disable captcha, redirect back */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://portfolio-it-harsh.vercel.app/?submitted=true" />
+            <input type="hidden" name="_next" value="https://it-harsh.vercel.app/?submitted=true" />
             <input type="hidden" name="_subject" value="New message from your portfolio!" />
             <div>
               <label htmlFor="name" className="text-sm text-muted block mb-2">
