@@ -53,7 +53,7 @@ export default function Experience() {
           {/* Animated timeline line */}
           <div className="absolute left-8 top-0 bottom-0 w-px bg-card-border hidden md:block overflow-hidden">
             <motion.div
-              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-accent-light via-cyan-400 to-accent-light origin-top"
+              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-amber-400 via-amber-300 to-amber-400 origin-top"
               style={{ scaleY, height: "100%" }}
             />
           </div>
@@ -67,14 +67,22 @@ export default function Experience() {
                 transition={{ duration: 0.6, delay: 0.2 * i }}
                 className="relative md:pl-20"
               >
-                <div className="hidden md:flex absolute left-[22px] top-6 w-[13px] h-[13px] rounded-full border-2 border-accent-light bg-background z-10" />
+                {exp.type === "work" ? (
+                  <div className="hidden md:flex absolute left-[22px] top-7 w-[13px] h-[13px] rounded-full border-2 border-accent-light bg-accent-light z-10" />
+                ) : (
+                  <div className="hidden md:flex absolute left-[22px] top-7 w-[13px] h-[13px] rounded-full border-2 border-accent-light/50 bg-background z-10" />
+                )}
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="p-6 rounded-2xl border border-card-border bg-card-bg/50 backdrop-blur-sm glow-hover transition-all duration-300"
+                  className={`p-6 rounded-2xl border border-card-border backdrop-blur-sm glow-hover transition-all duration-300 ${
+                    exp.type === "work"
+                      ? "bg-card-bg/50 border-l-2 border-l-amber-500/40"
+                      : "bg-card-bg/30 opacity-90"
+                  }`}
                 >
                   <div className="flex items-start justify-between flex-wrap gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-accent/10 text-accent-light">
+                      <div className={`p-2 rounded-lg ${exp.type === "work" ? "bg-amber-500/10 text-amber-400" : "bg-zinc-500/10 text-zinc-400"}`}>
                         {exp.type === "work" ? <Briefcase size={18} /> : <GraduationCap size={18} />}
                       </div>
                       <div>

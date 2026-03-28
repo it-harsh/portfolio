@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, User, Users } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -94,14 +94,6 @@ export default function Projects() {
                     Featured
                   </span>
                 )}
-                <span className={`flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded-full border ${
-                  project.solo
-                    ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                    : "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                }`}>
-                  {project.solo ? <User size={9} /> : <Users size={9} />}
-                  {project.solo ? "Solo" : "Team"}
-                </span>
               </div>
 
               <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-accent-light transition-colors">
