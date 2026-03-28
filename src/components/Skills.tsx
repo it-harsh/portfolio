@@ -3,102 +3,54 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const skillCategories = [
-  {
-    title: "Languages",
-    skills: ["Java 17", "JavaScript", "Python", "SQL"],
-    color: "from-purple-500 to-violet-600",
-    span: "col-span-2 md:col-span-1",
-  },
-  {
-    title: "Backend Frameworks",
-    skills: ["Spring Boot", "Quarkus", "gRPC", "REST APIs", "Microservices"],
-    color: "from-cyan-500 to-blue-600",
-    span: "col-span-2 md:col-span-1",
-  },
-  {
-    title: "Databases & Messaging",
-    skills: ["PostgreSQL", "MySQL", "Redis", "Kafka", "Hibernate/JPA"],
-    color: "from-emerald-500 to-teal-600",
-    span: "col-span-2",
-  },
-  {
-    title: "DevOps & Cloud",
-    skills: ["Docker", "AWS ECS", "CI/CD", "Linux", "Bash Scripting", "Git"],
-    color: "from-orange-500 to-amber-600",
-    span: "col-span-2 md:col-span-1",
-  },
-  {
-    title: "Security & Tools",
-    skills: ["Keycloak", "RBAC", "JWT", "Postman", "SoapUI", "Jira", "Claude Code"],
-    color: "from-rose-500 to-pink-600",
-    span: "col-span-2 md:col-span-1",
-  },
-];
+const row1 = ["Java 21","Spring Boot","Quarkus","gRPC","NestJS","REST APIs","Microservices","Kafka","Redis","PostgreSQL","MySQL","Hibernate/JPA","Docker","AWS ECS","Flyway"];
+const row2 = ["Next.js","TypeScript","React","Tailwind CSS","Supabase","Keycloak","JWT","RBAC","Python","CI/CD","Linux","Git","Bash","GraphQL","Prisma"];
+
+function MarqueeRow({ skills, direction }: { skills: string[]; direction: "fwd" | "rev" }) {
+  const doubled = [...skills, ...skills];
+  return (
+    <div className="overflow-hidden relative">
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+      <div
+        className="flex gap-3 w-max"
+        style={{ animation: `marquee-${direction} ${direction === "fwd" ? "35s" : "42s"} linear infinite` }}
+      >
+        {doubled.map((skill, i) => (
+          <span
+            key={i}
+            className="px-4 py-2 text-sm font-mono border border-card-border bg-card-bg/60 rounded-lg text-muted whitespace-nowrap hover:text-foreground hover:border-accent-light transition-colors cursor-default"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="relative py-32 px-6">
-      <div ref={ref} className="max-w-6xl mx-auto">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-sm font-mono text-accent-light mb-3 tracking-wider uppercase">
-            Skills
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold">
-            My{" "}
-            <span className="gradient-text">tech stack</span>
-          </h3>
+    <section id="skills" className="relative py-32">
+      <div ref={ref} className="max-w-6xl mx-auto px-6 mb-16">
+        <motion.div initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
+          <h2 className="text-sm font-mono text-accent-light mb-3 tracking-wider uppercase">Skills</h2>
+          <h3 className="text-3xl md:text-4xl font-bold">My <span className="gradient-text">tech stack</span></h3>
         </motion.div>
-
-        {/* Bento grid of skills */}
-        <div className="grid grid-cols-2 gap-4">
-          {skillCategories.map((category, i) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
-              whileHover={{ y: -5 }}
-              className={`${category.span} relative group p-6 rounded-2xl border border-card-border bg-card-bg/50 backdrop-blur-sm overflow-hidden glow-hover transition-all duration-300`}
-            >
-              {/* Gradient accent bar */}
-              <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${category.color} opacity-60 group-hover:opacity-100 transition-opacity`}
-              />
-
-              <h4 className="font-semibold text-foreground mb-4 text-lg">
-                {category.title}
-              </h4>
-
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, j) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{
-                      duration: 0.3,
-                      delay: 0.2 + i * 0.1 + j * 0.05,
-                    }}
-                    className="px-3 py-1.5 text-sm bg-background/50 border border-card-border rounded-lg text-muted hover:text-foreground hover:border-accent-light transition-colors cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="space-y-4"
+      >
+        <MarqueeRow skills={row1} direction="fwd" />
+        <MarqueeRow skills={row2} direction="rev" />
+      </motion.div>
     </section>
   );
 }

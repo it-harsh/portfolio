@@ -5,18 +5,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Courses", href: "#courses" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#hero", id: "hero" },
+  { name: "About", href: "#about", id: "about" },
+  { name: "Skills", href: "#skills", id: "skills" },
+  { name: "Projects", href: "#projects", id: "projects" },
+  { name: "Experience", href: "#experience", id: "experience" },
+  { name: "Courses", href: "#courses", id: "courses" },
+  { name: "Contact", href: "#contact", id: "contact" },
 ];
+
+function useActiveSection() {
+  const [activeId, setActiveId] = useState("hero");
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveId(id); },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+  return activeId;
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const activeId = useActiveSection();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -30,48 +50,49 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-card-border"
-          : "bg-transparent"
+        scrolled ? "bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-card-border" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <motion.a
           href="#hero"
-          className="text-xl font-bold gradient-text"
+          className="text-xl font-mono font-bold text-foreground hover:text-accent-light transition-colors"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          &lt;Portfolio /&gt;
+          hp<span className="text-accent-light cursor-blink">_</span>
         </motion.a>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, i) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i, duration: 0.4 }}
-              className="text-sm text-muted hover:text-foreground transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-light group-hover:w-full transition-all duration-300" />
-            </motion.a>
-          ))}
+          {navLinks.map((link, i) => {
+            const isActive = activeId === link.id;
+            return (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i, duration: 0.4 }}
+                className={`text-sm transition-colors relative group ${
+                  isActive ? "text-foreground" : "text-muted hover:text-foreground"
+                }`}
+              >
+                {link.name}
+                <span
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-accent-light transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </motion.a>
+            );
+          })}
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
+        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -86,7 +107,9 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-muted hover:text-foreground transition-colors py-2"
+                  className={`py-2 transition-colors ${
+                    activeId === link.id ? "text-accent-light" : "text-muted hover:text-foreground"
+                  }`}
                 >
                   {link.name}
                 </a>
