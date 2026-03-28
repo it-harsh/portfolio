@@ -27,7 +27,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="space-y-5">
             <p className="text-muted leading-relaxed text-lg">
-              First real project was Python — training CNNs and ResNets to classify satellite imagery as developed or undeveloped land. Got solid accuracy. Learned that green pixels lie.
+              First real project was Python — combining spectral bands from satellite imagery to train CNNs and ResNets to classify areas as developed or undeveloped land. Learned that green pixels lie.
             </p>
             <p className="text-muted leading-relaxed">
               Spent two years at TCS after that, rewriting legacy Java — better throughput, lower locks, mostly by reading code nobody else wanted to touch.

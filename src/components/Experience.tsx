@@ -23,6 +23,20 @@ const experiences = [
     tags: ["Quarkus", "Keycloak", "gRPC", "AWS ECS", "PostgreSQL"],
   },
   {
+    type: "freelance",
+    role: "Freelance Developer",
+    company: "Independent",
+    period: "Apr 2025 – Oct 2025",
+    location: "Remote",
+    summary: "Stepped back from employment to learn frontend and build personal projects.",
+    bullets: [
+      "Learned React and Next.js by building this portfolio and personal side projects",
+      "Collaborated on a friend's project — applied backend thinking to frontend problems",
+      "Explored system design and full-stack architecture independently",
+    ],
+    tags: ["React", "Next.js", "Tailwind CSS", "Self-directed"],
+  },
+  {
     type: "work",
     role: "Assistant System Engineer",
     company: "Tata Consultancy Services",
@@ -32,7 +46,8 @@ const experiences = [
     bullets: [
       "84.6% throughput boost — eliminated DB locks from multithreaded access",
       "62.5% lower response times via query optimization for high-concurrency environments",
-      "93% faster CDR file-scanning — rewrote ExecutorService-based simulator (Cherry Cake project)",
+      "93% faster CDR file-scanning — eliminated I/O alarms via multithreading overhaul",
+      "CDR load simulator (Cherry Cake) built with ExecutorService for production-scale flow testing",
       "Bash scripts for GDPR compliance — data at rest and in transit",
       "Worked on Lawful Interception submodule",
       "Updated 300+ SoapUI/Groovy test suites to accept encrypted parameters",
@@ -49,7 +64,7 @@ const experiences = [
     location: "Ahmedabad, India",
     summary: "8.73 CGPA — software engineering, DSA, algorithms, neural networks.",
     bullets: [
-      "ISRO project: CNN + ResNet image classification, BoVW theory, Python",
+      "ISRO project: spectral band combinations, CNN + ResNet classification, BoVW theory — Python",
     ],
     tags: ["Java", "Python", "Data Structures", "Neural Networks"],
   },
@@ -89,6 +104,8 @@ export default function Experience() {
               >
                 {exp.type === "work" ? (
                   <div className="hidden md:flex absolute left-[22px] top-7 w-[13px] h-[13px] rounded-full border-2 border-accent-light bg-accent-light z-10" />
+                ) : exp.type === "freelance" ? (
+                  <div className="hidden md:flex absolute left-[22px] top-7 w-[13px] h-[13px] rounded-full border-2 border-accent-light/70 bg-background z-10" />
                 ) : (
                   <div className="hidden md:flex absolute left-[22px] top-7 w-[13px] h-[13px] rounded-full border-2 border-accent-light/50 bg-background z-10" />
                 )}
@@ -97,13 +114,15 @@ export default function Experience() {
                   className={`p-6 rounded-2xl border border-card-border backdrop-blur-sm glow-hover transition-all duration-300 ${
                     exp.type === "work"
                       ? "bg-card-bg/50 border-l-2 border-l-cyan-500/40"
+                      : exp.type === "freelance"
+                      ? "bg-card-bg/40 border-l-2 border-l-cyan-500/20 opacity-80"
                       : "bg-card-bg/30 opacity-90"
                   }`}
                 >
                   <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${exp.type === "work" ? "bg-cyan-500/10 text-cyan-400" : "bg-zinc-500/10 text-zinc-400"}`}>
-                        {exp.type === "work" ? <Briefcase size={18} /> : <GraduationCap size={18} />}
+                      <div className={`p-2 rounded-lg ${exp.type === "work" ? "bg-cyan-500/10 text-cyan-400" : exp.type === "freelance" ? "bg-cyan-500/10 text-cyan-400/60" : "bg-zinc-500/10 text-zinc-400"}`}>
+                        {exp.type === "work" || exp.type === "freelance" ? <Briefcase size={18} /> : <GraduationCap size={18} />}
                       </div>
                       <div>
                         <h4 className="font-bold text-foreground">{exp.role}</h4>
