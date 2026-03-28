@@ -5,11 +5,12 @@ import { useRef } from "react";
 import { Code2, Server, Zap, Music } from "lucide-react";
 
 const highlights = [
-  { icon: Zap,    title: "93% faster",      description: "CDR scan performance boost at TCS — by rewriting multithreaded file processing." },
-  { icon: Server, title: "Financial APIs",   description: "Keycloak auth, gRPC integrations, RBAC across payments and onboarding at GroveTech." },
-  { icon: Code2,  title: "3 SaaS shipped",   description: "InvoiceAI, Leadder, BookMyShow — built and deployed end to end." },
+  { icon: Zap,    title: "93% faster",       description: "CDR scan performance boost at TCS — by rewriting multithreaded file processing." },
+  { icon: Server, title: "Financial APIs",    description: "Keycloak auth, gRPC integrations, RBAC across payments and onboarding at GroveTech." },
+  { icon: Code2,  title: "3 SaaS shipped",    description: "InvoiceAI, Leadder, BookMyShow — built and deployed end to end." },
   { icon: Music,  title: "Part-time flautist", description: "Precision in code and music aren't that different. Both punish sloppiness." },
 ];
+
 
 export default function About() {
   const ref = useRef(null);
@@ -24,9 +25,12 @@ export default function About() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="space-y-6">
+          <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="space-y-5">
             <p className="text-muted leading-relaxed text-lg">
-              Started writing Java to classify satellite images for ISRO. Spent two years at TCS making legacy systems faster — better throughput, lower response times, mostly by reading code nobody else wanted to touch.
+              First real project was Python — training CNNs and ResNets to classify satellite imagery as developed or undeveloped land. Got solid accuracy. Learned that green pixels lie.
+            </p>
+            <p className="text-muted leading-relaxed">
+              Spent two years at TCS after that, rewriting legacy Java — better throughput, lower locks, mostly by reading code nobody else wanted to touch.
             </p>
             <p className="text-muted leading-relaxed">
               Now at GroveTech building financial APIs — Keycloak auth, gRPC, payment workflows. On the side I find industries where the software is still missing and start building. InvoiceAI for expense tracking, Leadder for HVAC quotes.

@@ -3,8 +3,8 @@
 :root {
   --background: #0a0a0f;
   --foreground: #e4e4e7;
-  --accent: #d97706;
-  --accent-light: #f59e0b;
+  --accent: #0891b2;
+  --accent-light: #22d3ee;
   --card-bg: #111118;
   --card-border: #1e1e2e;
   --muted: #71717a;
@@ -60,7 +60,7 @@ html {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #f59e0b, #fb923c, #f59e0b);
+  background: linear-gradient(135deg, #22d3ee, #38bdf8, #22d3ee);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -75,20 +75,20 @@ html {
 
 /* Glow effect */
 .glow {
-  box-shadow: 0 0 20px rgba(217, 119, 6, 0.15),
-              0 0 60px rgba(217, 119, 6, 0.1);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15),
+              0 0 60px rgba(34, 211, 238, 0.1);
 }
 
 .glow-hover:hover {
-  box-shadow: 0 0 30px rgba(217, 119, 6, 0.25),
-              0 0 80px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.25),
+              0 0 80px rgba(34, 211, 238, 0.15);
 }
 
 /* Grid background pattern */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(217, 119, 6, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217, 119, 6, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
