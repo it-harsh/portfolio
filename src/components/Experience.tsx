@@ -86,7 +86,7 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative" ref={timelineRef}>
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-card-border hidden md:block overflow-hidden">
+          <div className="absolute left-[28px] top-0 bottom-0 w-px bg-card-border hidden md:block overflow-hidden z-0">
             <motion.div
               className="absolute top-0 left-0 right-0 bg-gradient-to-b from-cyan-400 via-cyan-300 to-cyan-400 origin-top"
               style={{ scaleY, height: "100%" }}
@@ -100,7 +100,7 @@ export default function Experience() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 * i }}
-                className="relative md:pl-20"
+                className="relative md:pl-20 z-10"
               >
                 {exp.type === "work" ? (
                   <div className="hidden md:flex absolute left-[22px] top-7 w-[13px] h-[13px] rounded-full border-2 border-accent-light bg-accent-light z-10" />
